@@ -3,8 +3,9 @@
     "version": "0.0.0",
     "main": "main.js",
     "scripts": {
-        "start": "ng build --output-path ./dist && electron .",
-        "build": "ng build --output-path ./dist --prod"
+        "build": "ng build --output-path ./dist --prod",
+        "full-start": "ng build --output-path ./dist && electron .",
+        "start": "electron ."
     },
     "private": true,
     "dependencies": {

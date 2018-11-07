@@ -21,8 +21,7 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.electron.ipcRenderer.on('just-do-it', (event, data) => {
-            console.log(`DEBUG data`, data);
+        this.electron.ipcRenderer.on('just-click-it', (event, data) => {
             this.data = data;
             this.cd.detectChanges();
         });

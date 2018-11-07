@@ -4,11 +4,10 @@ const fs = require('fs');
 const path = require('path');
 const {
     BrowserWindow,
-    Menu,
     app,
-    ipcMain,
-    shell,
 } = require('electron');
+
+const { setDefaultMenu } = require('./esrc/menus');
 
 //
 // Keep a global reference of the window object, if you don't, the window will
@@ -37,31 +36,7 @@ function createWindow() {
         win = null;
     });
 
-    const menu = Menu.buildFromTemplate([{
-        label: '&File',
-        submenu: [{
-            label: 'JUST DO IT!',
-            click() {
-                win.webContents.send('just-do-it', { some: 'data' });
-            }
-        }, {
-            type: 'separator',
-        }, {
-            label: '&Exit',
-            click() {
-                app.quit();
-            }
-        }]
-    }, {
-        label: '&Help',
-        submenu: [{
-            label: 'Author',
-            click() {
-                shell.openExternal('https://github.com/daemonraco');
-            }
-        }]
-    }]);
-    Menu.setApplicationMenu(menu);
+    setDefaultMenu({ window: win });
 }
 //
 // This method will be called when Electron has finished
