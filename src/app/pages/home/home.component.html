@@ -1,0 +1,36 @@
+<div class="container py-3">
+    <div class="row">
+        <div class="col">
+
+            <div class="jumbotron">
+                <h1 class="display-3">Hello, world!</h1>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores praesentium porro error vitae
+                    a! Autem necessitatibus vitae laborum! Nemo, fugiat.
+                </p>
+
+                <p>
+                    <a class="btn btn-primary btn-lg" href="#" role="button">
+                        <fa-icon [icon]="icons.faGlasses"></fa-icon>
+                        Learn more
+                    </a>
+                    <a class="btn btn-secondary btn-lg" role="button" (click)="openWebsite()">
+                        <fa-icon [icon]="icons.faUser"></fa-icon>
+                        Autor
+                    </a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <div *ngIf="data" class="row">
+        <hr />
+
+        <div class="col">
+            <div class="jumbotron">
+                <pre>{{ data | json }}</pre>
+            </div>
+        </div>
+    </div>
+</div>
