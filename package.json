@@ -1,9 +1,18 @@
 {
     "name": "my-app",
     "version": "0.0.1",
+    "author": "DAEMonRaco",
     "main": "esrc/main.js",
     "build": {
-        "appId": "com.electron.my-app",
+        "appId": "com.example.my-app",
+        "copyright": "Copyright © 2018 ${author}",
+        "files": [
+            "esrc/**/*",
+            "ui/**/*"
+        ],
+        "win": {
+            "icon": "./resources/icons/app-icon-256px.ico"
+        },
         "mac": {
             "category": "my-app.category.type"
         }
