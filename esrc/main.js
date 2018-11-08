@@ -1,13 +1,12 @@
 'use strict';
 
-const fs = require('fs');
 const path = require('path');
 const {
     BrowserWindow,
     app,
 } = require('electron');
 
-const { setDefaultMenu } = require('./esrc/menus');
+const { setDefaultMenu } = require('./menus');
 
 //
 // Keep a global reference of the window object, if you don't, the window will
@@ -20,7 +19,8 @@ function createWindow() {
     win = new BrowserWindow({ width: 1024, height: 768 });
     //
     // and load the index.html of the app.
-    win.loadFile('dist/index.html');
+    win.loadFile(path.join(__dirname, '../ui/index.html'));
+
     if (process.env.DEBUG !== undefined) {
         // 
         // Open the DevTools.
