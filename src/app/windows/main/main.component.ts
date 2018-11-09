@@ -3,11 +3,11 @@ import { ElectronService } from 'ngx-electron';
 import { faGlasses, faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-    selector: 'ui-home',
-    templateUrl: './home.component.html',
+    selector: 'ui-main',
+    templateUrl: './main.component.html',
     styles: []
 })
-export class HomeComponent implements OnInit {
+export class MainComponent implements OnInit {
     public data: any = null;
     public icons = { faGlasses, faUser };
 
@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     }
 
     public openWebsite(): void {
-        this.electron.shell.openExternal(`http://github.com/daemonraco`);
+        this.electron.shell.openExternal(`https://github.com/daemonraco`);
     }
 
     ngOnInit() {

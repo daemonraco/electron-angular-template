@@ -19,10 +19,11 @@
     },
     "scripts": {
         "build": "ng build --output-path ./ui --prod",
+        "build:test": "ng build --output-path ./ui",
         "dist": "electron-builder",
-        "full-start": "ng build --output-path ./ui && electron .",
         "pack": "electron-builder --dir",
-        "start": "electron ."
+        "start": "electron .",
+        "start:full": "ng build --output-path ./ui && electron ."
     },
     "private": true,
     "dependencies": {

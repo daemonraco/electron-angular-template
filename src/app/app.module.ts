@@ -2,13 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ElectronService, NgxElectronModule } from 'ngx-electron';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 import { AppInitFactory } from './app.init';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BasicsModule } from './basics/basics.module';
-import { PagesModule } from './pages/pages.module';
+import { WindowsModule } from './windows/windows.module';
 
 @NgModule({
     declarations: [
@@ -20,7 +21,8 @@ import { PagesModule } from './pages/pages.module';
         BrowserModule,
         FontAwesomeModule,
         NgxElectronModule,
-        PagesModule,
+        RouterModule.forRoot([], { enableTracing: true, useHash: true }),
+        WindowsModule,
     ],
     providers: [
         {
